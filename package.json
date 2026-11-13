@@ -1,0 +1,28 @@
+{
+  "name": "ts-vertical-slice",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts",
+    "start": "bun src/index.ts",
+    "build": "bun build src/index.ts src/cli/cli.ts --target bun --outdir dist --packages external",
+    "cli": "bun src/cli/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check .",
+    "test": "bun test",
+    "test:coverage": "bun test --coverage",
+    "test:integration": "RUN_INTEGRATION=true bun test .integration.test.ts"
+  },
+  "dependencies": {
+    "commander": "15.0.0",
+    "hono": "4.13.14",
+    "mysql2": "3.24.6",
+    "sequelize": "6.37.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.6.4",
+    "@types/bun": "1.4.4",
+    "typescript": "7.0.2"
+  }
+}
